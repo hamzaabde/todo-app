@@ -33,8 +33,6 @@ const uid = (length = 8) => {
 	return str
 }
 
-console.log(uid())
-
 const TABS = ['All', 'Active', 'Completed']
 
 const TASKS = [

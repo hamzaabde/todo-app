@@ -1,10 +1,9 @@
 import { useState } from 'react'
-
 export default function ({ tab, task, dispatch }) {
 	return (
 		<div className="flex flex-nowrap items-center gap-x-2">
 			<input
-				className="rounded-md w-6 h-6"
+				className="rounded-md w-6 h-6 transition"
 				checked={task.done}
 				onChange={() => {
 					if (task.done) dispatch({ type: 'MARK_NOT_DONE', payload: task.id })
@@ -14,8 +13,8 @@ export default function ({ tab, task, dispatch }) {
 			/>
 			<p
 				className={`${
-					task.done ? 'line-through' : null
-				} grow decoration-2 decoration-red-500 text-lg font-[500] text-black`}
+					task.done ? 'line-through scale-95' : null
+				} cursor-grab transition-all grow decoration-2 decoration-red-500 text-lg font-[500] text-black`}
 			>
 				{task.details}
 			</p>
